@@ -30,6 +30,10 @@ export default class ImageMapper extends Component {
 			"strokeColor",
 			"width"
 		];
+		this.state = {
+			map: JSON.parse(JSON.stringify(this.props.map))
+		}
+		// this.initCanvas();
 	}
 
 	shouldComponentUpdate(nextProps) {
@@ -39,14 +43,14 @@ export default class ImageMapper extends Component {
 		return !isEqual(this.props.map, this.state.map) || propChanged;
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		this.updateCacheMap();
 	}
 
 	updateCacheMap() {
 		this.setState(
 			{ map: JSON.parse(JSON.stringify(this.props.map)) },
-			this.initCanvas
+			this.initCanvas()
 		);
 	}
 
