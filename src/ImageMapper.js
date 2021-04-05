@@ -33,7 +33,7 @@ export default class ImageMapper extends Component {
 		this.state = {
 			map: JSON.parse(JSON.stringify(this.props.map))
 		}
-		this.initCanvas();
+		// this.initCanvas();
 	}
 
 	shouldComponentUpdate(nextProps) {
@@ -47,12 +47,12 @@ export default class ImageMapper extends Component {
 	// 	this.updateCacheMap();
 	// }
 
-	updateCacheMap() {
-		this.setState(
-			{ map: JSON.parse(JSON.stringify(this.props.map)) },
-			this.initCanvas()
-		);
-	}
+	// updateCacheMap() {
+	// 	this.setState(
+	// 		{ map: JSON.parse(JSON.stringify(this.props.map)) },
+	// 		this.initCanvas()
+	// 	);
+	// }
 
 	// componentDidUpdate() {
 	// 	this.updateCacheMap();
@@ -247,7 +247,7 @@ export default class ImageMapper extends Component {
 				/>
 				<canvas ref={node => (this.canvas = node)} style={this.styles.canvas} />
 				<map name={this.state.map.name} style={this.styles.map}>
-					{this.renderAreas()}
+					{this.renderAreas}
 				</map>
 			</div>
 		);
