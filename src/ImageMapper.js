@@ -33,7 +33,7 @@ export default class ImageMapper extends Component {
 		this.state = {
 			map: JSON.parse(JSON.stringify(this.props.map))
 		}
-		// this.initCanvas();
+		this.initCanvas();
 	}
 
 	shouldComponentUpdate(nextProps) {
@@ -54,10 +54,10 @@ export default class ImageMapper extends Component {
 		);
 	}
 
-	componentDidUpdate() {
-		this.updateCacheMap();
-		this.initCanvas();
-	}
+	// componentDidUpdate() {
+	// 	this.updateCacheMap();
+	// 	this.initCanvas();
+	// }
 
 	drawrect(coords, fillColor, lineWidth, strokeColor) {
 		let [left, top, right, bot] = coords;
