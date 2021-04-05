@@ -43,16 +43,16 @@ export default class ImageMapper extends Component {
 		return !isEqual(this.props.map, this.state.map) || propChanged;
 	}
 
-	// componentDidMount() {
-	// 	this.updateCacheMap();
-	// }
+	componentDidMount() {
+		this.updateCacheMap();
+	}
 
-	// updateCacheMap() {
-	// 	this.setState(
-	// 		{ map: JSON.parse(JSON.stringify(this.props.map)) },
-	// 		this.initCanvas()
-	// 	);
-	// }
+	updateCacheMap() {
+		this.setState(
+			{ map: JSON.parse(JSON.stringify(this.props.map)) },
+			this.initCanvas
+		);
+	}
 
 	// componentDidUpdate() {
 	// 	this.updateCacheMap();
