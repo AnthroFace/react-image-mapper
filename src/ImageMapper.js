@@ -30,6 +30,7 @@ export default class ImageMapper extends Component {
 			"strokeColor",
 			"width"
 		];
+		console.log(this.props.map);
 		this.state = {
 			map: JSON.parse(JSON.stringify(this.props.map))
 		}
