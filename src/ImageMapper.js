@@ -5,6 +5,7 @@ import isEqual from "react-fast-compare";
 export default class ImageMapper extends Component {
 	constructor(props) {
 		super(props);
+		console.log("PROPS", props);
 		[
 			"drawrect",
 			"drawcircle",
@@ -30,7 +31,6 @@ export default class ImageMapper extends Component {
 			"strokeColor",
 			"width"
 		];
-		console.log("PROPS", props);
 		this.state = {
 			map: JSON.parse(JSON.stringify(this.props.map))
 		}
@@ -44,9 +44,9 @@ export default class ImageMapper extends Component {
 		return !isEqual(this.props.map, this.state.map) || propChanged;
 	}
 
-	componentDidMount() {
-		this.updateCacheMap();
-	}
+	// componentDidMount() {
+	// 	this.updateCacheMap();
+	// }
 
 	updateCacheMap() {
 		this.setState(
